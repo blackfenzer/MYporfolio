@@ -1,8 +1,25 @@
+import { text } from "framer-motion/client";
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        varuna: ["Varuna", "sans-serif"],
+      },
+      colors: {
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        bgPrimary: "var(--color-bg-primary)",
+        textBase: "var(--color-text-base)",
+      },
+    },
   },
   plugins: [],
 };

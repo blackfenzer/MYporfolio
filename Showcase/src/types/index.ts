@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 export interface Project {
   id: number;
   title: string;
@@ -7,9 +8,8 @@ export interface Project {
   link: string;
 }
 
-export interface ThemeColors {
-  primary: string;
-  secondary: string;
-  background: string;
-  text: string;
+export type ThemeType = "black" | "orange" | "purple" | "green";
+
+export interface ThemeProviderProps {
+  children: ReactNode; // This allows any valid React child
 }

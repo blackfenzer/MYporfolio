@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import ThemeSwitcher from "../../utils/ThemeSwitcher";
+import { useTheme } from "../../context/ThemeContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
-
   const headerWidth = useTransform(scrollY, [0, 50], ["80%", "100%"]);
 
   const headerTop = useTransform(scrollY, [0, 50], ["2rem", "0rem"]);
-
+  const { theme } = useTheme();
   // Update isScrolled state based on scroll position
   useEffect(() => {
     const unsubscribe = scrollY.onChange((value) => {
@@ -33,17 +34,20 @@ const Header = () => {
             ? "bg-white shadow-md rounded-none"
             : "bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg"
         } 
-        transition-colors duration-300`}
+        transition-colors duration-300 theme-${theme}`}
     >
       <nav className="px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-blue-600"
+            className="text-2xl font-bold text-primary"
           >
             Name
           </motion.div>
+
+          {/* Switch */}
+          <ThemeSwitcher />
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
