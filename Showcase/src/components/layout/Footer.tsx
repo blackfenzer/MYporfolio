@@ -27,9 +27,10 @@ const Footer = () => {
       {/* Footer content */}
 
       <section className="relative z-10 container mx-auto px-8 pt-12 pb-4 text-gray-900 dark:text-gray-100 flex-column gap-16">
-        <div
+        <a
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=your-email@example.com&su=Contact&body=Hi there!"
         >
           <p className="text-5xl font-semibold tracking-tight mb-5">
             Let's work together
@@ -42,7 +43,7 @@ const Footer = () => {
           >
             {" "}
           </motion.div>
-        </div>
+        </a>
         <div className="flex flex-row justify-between gap-8 ">
           <div className="flex flex-col w-1/2 space-y-6">
             <div className="h-px w-full bg-white"></div>
