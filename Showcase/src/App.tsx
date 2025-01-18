@@ -2,6 +2,7 @@ import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import Hero from "./components/sections/Hero";
 import Projects from "./components/sections/Projects";
+import Stack from "./components/sections/Stack";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Hero />
         {/* <About /> */}
         <Projects />
-        {/* <Contact /> */}
+        <Stack />
       </main>
       <Footer />
     </div>
