@@ -1,73 +1,95 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { Project } from "../../types";
+import ProjectCard from "../ui/ProjectCard";
 
-const Projects: React.FC = () => {
-  const projects: Project[] = [
+export default function Home() {
+  const projects = [
     {
-      id: 1,
-      title: "Project One",
-      description: "A fantastic project description",
-      image: "/project1.jpg",
-      technologies: ["React", "TypeScript", "Tailwind"],
-      link: "#",
+      number: "01",
+      image: "/pulse-x.png", // Replace with your image path
+      title: "Pulse-X State Management",
+      description:
+        "Pulse-X is a state management library for Flutter projects.",
+      link: "https://github.com/abhisheknaiidu/pulse-x",
     },
-    // Add more projects...
+    {
+      number: "02",
+      image: "/notee.png", // Replace with your image path
+      title: "Notee Personal Management App",
+      description: "Notee is a personal management app built with Flutter.",
+      link: "https://github.com/abhisheknaiidu/pulse-x",
+    },
+    {
+      number: "03",
+      image: "/threads.png", // Replace with your image path
+      title: "Threads Logo Animation",
+      description:
+        "Animated Facebook Threads App Logo made with custom paths and painters.",
+      link: "https://github.com/abhisheknaiidu/pulse-x",
+    },
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-          My Projects
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden"
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+    <main className="container mx-auto px-4 py-8 min-h-screen">
+      <h2 className="text-3xl font-bold text-center mb-8 text-[#3e3e3e]">
+        Projects
+      </h2>
+      <div className="grid gap-8">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className={`flex flex-col md:flex-row items-center justify-between gap-4 ${
+              index % 2 === 0 ? "" : "md:pl-20"
+            }`}
+          >
+            <ProjectCard
+              number={project.number}
+              image={project.image}
+              title={project.title}
+            />
+            <article className="flex flex-col items-start justify-between gap-1.5 p-5 relative h-full">
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-[#3e3e3e]">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-gray-700 mt-2 break-words max-w-md">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-100 rounded-full text-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={project.link}
-                  className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  View Project
-                </motion.a>
               </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
+              <motion.a
+                className="relative w-fit"
+                initial="initial"
+                whileHover="hover"
+                href={project.link}
+              >
+                {/* Background layer */}
+                <motion.div
+                  className="absolute rounded-lg bg-blue-600/20 z-10"
+                  variants={{
+                    initial: {
+                      top: 8,
+                      left: -8,
+                      right: 8,
+                      bottom: -8,
+                    },
+                    hover: {
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                    },
+                  }}
+                  transition={{ duration: 0.2 }}
+                />
 
-export default Projects;
+                {/* Main button */}
+                <motion.div className="relative border border-gray-300 px-6 py-2 rounded-lg font-medium bg-white">
+                  <p className="z-30">project name</p>
+                </motion.div>
+              </motion.a>
+            </article>
+          </div>
+        ))}
+      </div>
+    </main>
+  );
+}

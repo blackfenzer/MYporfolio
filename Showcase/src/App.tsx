@@ -9,7 +9,7 @@ function App() {
       {" "}
       <Header />
       <main>
-        <div className="min-h-screen bg-white dark:bg-gray-900"></div>
+        {/* <div className="min-h-screen bg-white dark:bg-gray-900"></div> */}
         <Hero />
         {/* <About /> */}
         <Projects />
