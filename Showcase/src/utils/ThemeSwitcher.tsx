@@ -10,10 +10,10 @@ const ThemeSwitcher = () => {
   const themes = ["black", "orange", "purple", "green"];
 
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className={`relative inline-block text-left theme-${theme}`}>
       <Menu.Button className="rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none">
         <div className="w-10 h-10 rounded-full flex items-center justify-center border-2 border-current">
-          <Paintbrush className="w-5 h-5" />
+          <Paintbrush className="w-5 h-5 " />
         </div>
       </Menu.Button>
 
@@ -26,7 +26,7 @@ const ThemeSwitcher = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute left-0 mt-2 w-36 rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute left-0 mt-2 w-36 rounded-md bg-red-50 dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="p-1">
             {themes.map((themeOption) => (
               <Menu.Item key={themeOption}>

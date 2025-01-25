@@ -13,6 +13,7 @@
     --color-secondary: hsl(0, 0%, 50%);
     --color-text-base: hsl(0, 0%, 100%);
     --color-bg-primary: hsl(0, 0%, 100%);
+    --color-bg-secondary: hsl(0, 0%, 100%);
   }
   /* * {
     @apply transition-all duration-300 ease-in-out;
@@ -22,19 +23,27 @@
 .theme-black {
   --color-primary: hsl(0, 0%, 0%);
   --color-secondary: hsl(0, 0%, 50%);
+  --color-bg-primary: hsl(0, 0%, 100%);
+  --color-bg-secondary: hsl(0, 0%, 100%);
 }
 
 .theme-orange {
   --color-primary: hsl(28, 84%, 53%);
   --color-secondary: hsl(54, 100%, 53%);
+  --color-bg-primary: hsl(0, 0%, 100%);
+  --color-bg-secondary: hsl(0, 0%, 100%);
 }
 
 .theme-purple {
   --color-primary: hsl(274, 100%, 53%);
   --color-secondary: hsl(226, 84%, 53%);
+  --color-bg-primary: hsl(0, 0%, 100%);
+  --color-bg-secondary: hsl(0, 0%, 100%);
 }
 
 .theme-green {
   --color-primary: hsl(120, 100%, 53%);
   --color-secondary: hsl(160, 84%, 53%);
+  --color-bg-primary: hsl(0, 0%, 100%);
+  --color-bg-secondary: hsl(0, 0%, 100%);
 }

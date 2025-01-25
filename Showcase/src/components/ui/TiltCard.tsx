@@ -15,7 +15,7 @@ function throttle<T extends (...args: any[]) => any>(
   };
 }
 
-export const TiltCard = () => {
+export const TiltCard = ({ src, alt }: { src: string; alt: string }) => {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
   const onMouseMove = useCallback(
@@ -41,17 +41,17 @@ export const TiltCard = () => {
   return (
     <>
       <div
-        className="card relative h-52 w-52 rounded-xl bg-white transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform"
+        className="card relative h-30 w-30 sm:h-44 sm:w-44 md:h-48 md:w-48 rounded-xl bg-white transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform"
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         style={{
-          transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale3d(1, 1, 1)`,
+          transform: `perspective(2000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale3d(1, 1, 1)`,
           transition: "all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s",
         }}
       >
         <div className="pulse absolute -inset-2 rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 opacity-75 blur-xl" />
-        <div className="relative flex h-full w-full select-none items-center justify-center rounded-lg bg-slate-900 text-sm font-light text-slate-300">
-          hover me
+        <div className="relative flex h-full w-full select-none items-center justify-center rounded-lg bg-slate-900 text-sm font-light text-secondary">
+          <img src={src} alt={alt} className="w-12 h-12" />
         </div>
       </div>
     </>

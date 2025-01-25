@@ -1,40 +1,54 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import { animate, inView } from "motion";
+import { useTheme } from "../../context/ThemeContext";
 const Hero: React.FC = () => {
+  inView("div", (info) => {
+    animate(info.target, { opacity: 1 });
+  });
+  const { theme } = useTheme();
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600">
-      <div className="container mx-auto px-6 py-24 text-white">
+    <section
+    id="home"
+      className={`min-h-screen flex items-center justify-center bg-gradient-to-r from-primary to-secondary theme-${theme}`}
+    >
+      <div className="container mx-auto px-6 py-24 text-bgPrimary">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{
+            duration: 2,
+            type: "spring",
+            stiffness: 20,
+            damping: 20,
+          }}
           className="max-w-3xl mx-auto text-center"
         >
           <motion.h1
             className="text-4xl md:text-6xl font-bold mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
           >
             Hi, I'm [Your Name]
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
           >
             Frontend Developer & UI/UX Enthusiast
           </motion.p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg hover:bg-opacity-90 transition-colors"
+          <motion.a
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1 }}
+            whileTap={{ scale: 1 }}
+            className="bg-bgPrimary text-primary px-8 py-3 rounded-lg font-semibold text-lg hover:text-secondary transition-colors"
+            href="#projects"
           >
             View My Work
-          </motion.button>
-        </motion.div>
+          </motion.a>
+        </motion.div> 
       </div>
     </section>
   );

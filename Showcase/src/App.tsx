@@ -12,7 +12,6 @@ function App() {
       <main>
         {/* <div className="min-h-screen bg-white dark:bg-gray-900"></div> */}
         <Hero />
-        {/* <About /> */}
         <Projects />
         <Stack />
       </main>

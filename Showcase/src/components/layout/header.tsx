@@ -19,8 +19,15 @@ const Header = () => {
     });
     return () => unsubscribe();
   }, [scrollY]);
+  const scrollToSection = (id: string, offset = 0) => {
+    const element = document.querySelector(id);
+    if (element) {
+      const top = element.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
 
-  const navItems = ["Home", "About", "Projects", "Contact"];
+  const navItems = ["Home", "Projects", "Stack", "Contact"];
 
   return (
     <motion.header
@@ -31,8 +38,8 @@ const Header = () => {
       className={`fixed left-1/2 -translate-x-1/2 z-50 
         ${
           isScrolled
-            ? "bg-white shadow-md rounded-none"
-            : "bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg"
+            ? "bg-bgSecondary backdrop-blur shadow-md rounded-none"
+            : "bg-bgPrimary backdrop-blur-sm rounded-2xl shadow-lg"
         } 
         transition-colors duration-300 theme-${theme}`}
     >
@@ -55,8 +62,9 @@ const Header = () => {
               <motion.a
                 key={item}
                 whileHover={{ y: -2 }}
-                className="text-gray-700 hover:text-blue-600"
-                href={`#${item.toLowerCase()}`}
+                className="text-primary hover:text-primary/50"
+                // href={`#${item.toLowerCase()}`}
+                onClick={() => scrollToSection(`#${item.toLowerCase()}`, 70)}
               >
                 {item}
               </motion.a>
@@ -65,7 +73,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-gray-600 hover:text-blue-600"
+            className="md:hidden p-2 text-primary hover:text-primary/50"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -86,7 +94,7 @@ const Header = () => {
               <motion.a
                 key={item}
                 whileHover={{ x: 4 }}
-                className="block text-gray-700 hover:text-blue-600"
+                className="block text-primary hover:text-blue-600"
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setIsMenuOpen(false)}
               >
