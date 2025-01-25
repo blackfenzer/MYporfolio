@@ -24,26 +24,26 @@
   --color-primary: hsl(0, 0%, 0%);
   --color-secondary: hsl(0, 0%, 50%);
   --color-bg-primary: hsl(0, 0%, 100%);
-  --color-bg-secondary: hsl(0, 0%, 100%);
+  --color-bg-secondary: hsl(0, 0%, 50%, 0.4);
 }
 
 .theme-orange {
   --color-primary: hsl(28, 84%, 53%);
   --color-secondary: hsl(54, 100%, 53%);
   --color-bg-primary: hsl(0, 0%, 100%);
-  --color-bg-secondary: hsl(0, 0%, 100%);
+  --color-bg-secondary: hsl(54, 100%, 53%, 0.4);
 }
 
 .theme-purple {
-  --color-primary: hsl(274, 100%, 53%);
-  --color-secondary: hsl(226, 84%, 53%);
-  --color-bg-primary: hsl(0, 0%, 100%);
-  --color-bg-secondary: hsl(0, 0%, 100%);
+  --color-primary: hsl(210, 60%, 30%);
+  --color-secondary: hsl(210, 40%, 60%);
+  --color-bg-primary: hsl(60, 20%, 95%);
+  --color-bg-secondary: hsl(210, 20%, 85%, 0.4);
 }
 
 .theme-green {
-  --color-primary: hsl(120, 100%, 53%);
-  --color-secondary: hsl(160, 84%, 53%);
+  --color-primary: hsl(90, 20%, 30%);
+  --color-secondary: hsl(100, 30%, 40%);
   --color-bg-primary: hsl(0, 0%, 100%);
-  --color-bg-secondary: hsl(0, 0%, 100%);
+  --color-bg-secondary: hsl(130, 20%, 60%, 0.4);
 }

@@ -17,6 +17,7 @@ export default {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
         bgPrimary: "var(--color-bg-primary)",
+        bgSecondary: "var(--color-bg-secondary)",
         textBase: "var(--color-text-base)",
       },
     },

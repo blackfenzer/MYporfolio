@@ -42,6 +42,14 @@ export default function Home() {
         <motion.h1
           className="text-4xl font-bold text-center mb-8 text-primary py-4 absolute top-0 left-0 w-full z-10"
           ref={ref}
+          initial={{ opacity: 0, y: 15 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{
+            duration: 0.55,
+            delay: 0.4,
+            type: "spring",
+            bounce: 0.5,
+          }}
         >
           Projects
         </motion.h1>
@@ -129,7 +137,7 @@ export default function Home() {
                 >
                   {/* Background layer */}
                   <motion.div
-                    className="absolute rounded-lg bg-blue-600/20 z-10"
+                    className="absolute rounded-lg bg-bgSecondary z-10"
                     variants={{
                       initial: {
                         top: 8,
@@ -148,7 +156,7 @@ export default function Home() {
                   />
 
                   {/* Main button */}
-                  <motion.div className="relative border border-gray-300 px-6 py-2 rounded-lg font-medium bg-bgPrimary">
+                  <motion.div className="relative border border-primary px-6 py-2 rounded-lg font-medium bg-bgPrimary text-primary">
                     <p className="z-30">project name</p>
                   </motion.div>
                 </motion.a>

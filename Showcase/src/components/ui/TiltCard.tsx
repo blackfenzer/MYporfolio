@@ -1,4 +1,5 @@
 import { useState, MouseEvent, useCallback } from "react";
+import { useTheme } from "../../context/ThemeContext";
 
 function throttle<T extends (...args: any[]) => any>(
   func: T,
@@ -37,11 +38,12 @@ export const TiltCard = ({ src, alt }: { src: string; alt: string }) => {
   const onMouseLeave = () => {
     setRotate({ x: 0, y: 0 });
   };
+  const { theme } = useTheme();
 
   return (
     <>
       <div
-        className="card relative h-30 w-30 sm:h-44 sm:w-44 md:h-48 md:w-48 rounded-xl bg-white transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform"
+        className={`theme-${theme} card relative h-30 w-30 sm:h-44 sm:w-44 md:h-48 md:w-48 rounded-xl bg-white transition-[all_400ms_cubic-bezier(0.03,0.98,0.52,0.99)_0s] will-change-transform`}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         style={{
@@ -49,8 +51,8 @@ export const TiltCard = ({ src, alt }: { src: string; alt: string }) => {
           transition: "all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s",
         }}
       >
-        <div className="pulse absolute -inset-2 rounded-lg bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 opacity-75 blur-xl" />
-        <div className="relative flex h-full w-full select-none items-center justify-center rounded-lg bg-slate-900 text-sm font-light text-secondary">
+        <div className="pulse absolute -inset-2 rounded-lg bg-gradient-to-r from-primary via-secondary to-bgPrimary opacity-75 blur-xl" />
+        <div className="relative flex h-full w-full select-none items-center justify-center rounded-lg bg-secondary text-sm font-light text-secondary">
           <img src={src} alt={alt} className="w-12 h-12" />
         </div>
       </div>
