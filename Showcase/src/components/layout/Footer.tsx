@@ -31,7 +31,7 @@ const Footer = () => {
         <a
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=your-email@example.com&su=Contact&body=Hi there!"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=sirapopc@gmail.com&su=Contact&body=Hi there!"
         >
           <motion.p
             className="text-5xl font-semibold tracking-tight mb-5 text-primary"
@@ -73,7 +73,7 @@ const Footer = () => {
             </motion.p>
             <div className="flex flex-col space-y-4">
               <a
-                href="https://www.linkedin.com/in/your-linkedin-profile/"
+                href="https://www.linkedin.com/in/sirapop-chaddaeng-774114299/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg hover:text-primary transition-colors duration-200 hover:translate-x-1"
@@ -81,20 +81,12 @@ const Footer = () => {
                 LinkedIn
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/blackfenzer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg hover:text-primary transition-colors duration-200 hover:translate-x-1"
               >
                 Github
-              </a>
-              <a
-                href="https://discord.cdnmsg.club"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg hover:text-primary transition-colors duration-200 hover:translate-x-1"
-              >
-                Discord
               </a>
             </div>
           </div>
@@ -116,7 +108,7 @@ const Footer = () => {
             </motion.p>
             <div className="flex flex-col space-y-4">
               <a
-                href="https://www.linkedin.com/in/your-linkedin-profile/"
+                href="mailto:sirapopc@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg hover:text-primary transition-colors duration-200 hover:translate-x-1"
@@ -124,20 +116,12 @@ const Footer = () => {
                 Email
               </a>
               <a
-                href="https://github.com"
+                href="tel:0838289898"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg hover:text-primary transition-colors duration-200 hover:translate-x-1"
               >
                 Phone
-              </a>
-              <a
-                href="https://discord.cdnmsg.club"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg hover:text-primary transition-colors duration-200 hover:translate-x-1"
-              >
-                Discord
               </a>
             </div>
           </div>
