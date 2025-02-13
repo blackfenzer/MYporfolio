@@ -7,5 +7,5 @@ const ReactCompilerConfig = {
 export default defineConfig({
   plugins: [react(ReactCompilerConfig)],
 
-  base: "/MYportfolio/Showcase/",
+  base: "/MYporfolio/Showcase/",
 });
