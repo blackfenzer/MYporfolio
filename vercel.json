@@ -1,6 +1,5 @@
 {
     "build": {
-        "src": "Showcase/src/App.tsx",
         "use": "@vercel/static-build",
         "config": {
             "distDir": "Showcase/dist"
