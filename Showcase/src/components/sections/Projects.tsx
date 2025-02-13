@@ -30,7 +30,7 @@ export default function Home() {
       title: "Price Tracking System",
       description:
         "Monitors real-time price fluctuations and visualizes historical trends through interactive graphs. Automated with Celery, it empowers both consumers and sellers to make informed decisions by providing data-driven insights into market trends, allowing users to sit back and stay updated effortlessly. ",
-      link: "https://github.com/abhisheknaiidu/pulse-x",
+      link: "https://github.com/blackfenzer/WebTracker",
     },
   ];
 
@@ -154,7 +154,7 @@ export default function Home() {
 
                   {/* Main button */}
                   <motion.div className="relative border border-secondary px-6 py-2 rounded-lg font-medium bg-bgPrimary text-primary">
-                    <p className="z-30">project name</p>
+                    <p className="z-30">visit project</p>
                   </motion.div>
                 </motion.a>
               </article>
