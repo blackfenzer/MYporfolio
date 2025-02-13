@@ -1,8 +1,9 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { Paintbrush } from "lucide-react";
+import { FlaskConical } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { ThemeType } from "../types";
+import { motion } from "framer-motion";
 
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
@@ -10,10 +11,17 @@ const ThemeSwitcher = () => {
   const themes = ["black", "orange", "purple", "green"];
 
   return (
-    <Menu as="div" className={`relative inline-block text-left theme-${theme} text-primary`}>
-      <Menu.Button className="rounded-full p-2 hover:bg-white focus:outline-none">
-        <div className="w-10 h-10 rounded-full flex items-center justify-center border-2 border-current">
-          <Paintbrush className="w-5 h-5 text-primary" />
+    <Menu
+      as="div"
+      className={`relative inline-block text-left theme-${theme} text-primary`}
+    >
+      <Menu.Button
+        className="rounded-lg p-2 hover:bg-bgPrimary focus:outline-none"
+        as={motion.div}
+        whileHover={{ rotate: 135 }}
+      >
+        <div className="w-10 h-10 rounded-lg flex items-center justify-center border-2 border-current">
+          <FlaskConical className="w-5 h-5 text-primary" />
         </div>
       </Menu.Button>
 

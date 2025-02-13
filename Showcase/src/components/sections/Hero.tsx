@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
   const { theme } = useTheme();
   return (
     <section
-    id="home"
+      id="home"
       className={`min-h-screen flex items-center justify-center bg-gradient-to-r from-primary to-secondary theme-${theme}`}
     >
       <div className="container mx-auto px-6 py-24 text-bgPrimary">
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            Hi, I'm [Your Name]
+            Hi, I'm Sirapop chaddaeng
           </motion.h1>
           <motion.p
             className="text-xl md:text-2xl mb-8"
@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            Frontend Developer & UI/UX Enthusiast
+            Fullstack Developer
           </motion.p>
           <motion.a
             initial={{ opacity: 0, x: -20 }}
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
           >
             View My Work
           </motion.a>
-        </motion.div> 
+        </motion.div>
       </div>
     </section>
   );

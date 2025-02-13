@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import ProjectCard from "../ui/ProjectCard";
 import { useTheme } from "../../context/ThemeContext";
 import { useRef } from "react";
-
+import { Newspaper, BedDouble, ChartLine } from "lucide-react";
 export default function Home() {
   const { theme } = useTheme();
   const ref = useRef(null);
@@ -10,25 +10,26 @@ export default function Home() {
   const projects = [
     {
       number: "01",
-      image: "/pulse-x.png", // Replace with your image path
-      title: "Pulse-X State Management",
+      icon: Newspaper, // Replace with your icon path
+      title: "News Aggregator & Comparator Platform ",
       description:
-        "Pulse-X is a state management library for Flutter projects.",
-      link: "https://github.com/abhisheknaiidu/pulse-x",
+        "Aggregates and compares news from multiple sources using machine learning to generate clear comparisons, concise summaries, and voice-enabled playback. This platform ensures the accuracy of information by cross-referencing various sources, assisting users who prefer auditory content consumption.",
+      link: "https://github.com/NewNewNews",
     },
     {
       number: "02",
-      image: "/notee.png", // Replace with your image path
-      title: "Notee Personal Management App",
-      description: "Notee is a personal management app built with Flutter.",
-      link: "https://github.com/abhisheknaiidu/pulse-x",
+      icon: BedDouble, // Replace with your icon path
+      title: "Hotel Booking Platform ",
+      description:
+        "Simplifies hotel reservations by allowing users to search, compare, and securely book accommodations. With robust authentication and optimized UI, it streamlines travel planning—saving time and enhancing user trust.",
+      link: "https://github.com/2110366-2566-2/pubpab",
     },
     {
       number: "03",
-      image: "/threads.png", // Replace with your image path
-      title: "Threads Logo Animation",
+      icon: ChartLine, // Replace with your icon path
+      title: "Price Tracking System",
       description:
-        "Animated Facebook Threads App Logo made with custom paths and painters.",
+        "Monitors real-time price fluctuations and visualizes historical trends through interactive graphs. Automated with Celery, it empowers both consumers and sellers to make informed decisions by providing data-driven insights into market trends, allowing users to sit back and stay updated effortlessly. ",
       link: "https://github.com/abhisheknaiidu/pulse-x",
     },
   ];
@@ -94,11 +95,7 @@ export default function Home() {
                   delay: index * 0.2,
                 }}
               >
-                <ProjectCard
-                  number={project.number}
-                  image={project.image}
-                  title={project.title}
-                />
+                <ProjectCard number={project.number} Icon={project.icon} />
               </motion.div>
               <article className="flex flex-col items-start justify-between gap-1.5 p-5 relative h-full">
                 <div className="flex-1">
@@ -116,7 +113,7 @@ export default function Home() {
                     {project.title}
                   </motion.h3>
                   <motion.p
-                    className="text-secondary mt-2 break-words max-w-md"
+                    className="text-secondary mt-2 break-words max-w-4xl"
                     transition={{
                       duration: 0.5,
                       type: "spring",
@@ -156,7 +153,7 @@ export default function Home() {
                   />
 
                   {/* Main button */}
-                  <motion.div className="relative border border-primary px-6 py-2 rounded-lg font-medium bg-bgPrimary text-primary">
+                  <motion.div className="relative border border-secondary px-6 py-2 rounded-lg font-medium bg-bgPrimary text-primary">
                     <p className="z-30">project name</p>
                   </motion.div>
                 </motion.a>

@@ -11,7 +11,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        varuna: ["Varuna", "sans-serif"],
+        varuna: ["Varuna"],
+        sleepTalk: ["Sleep Talk"],
       },
       colors: {
         primary: "var(--color-primary)",

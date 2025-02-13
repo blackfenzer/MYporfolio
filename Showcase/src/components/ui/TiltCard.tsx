@@ -51,7 +51,7 @@ export const TiltCard = ({ src, alt }: { src: string; alt: string }) => {
           transition: "all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s",
         }}
       >
-        <div className="pulse absolute -inset-2 rounded-lg bg-gradient-to-r from-primary via-secondary to-bgPrimary opacity-75 blur-xl" />
+        <div className="pulse absolute -inset-2 rounded-lg bg-gradient-to-r from-primary via-secondary opacity-75 blur-xl" />
         <div className="relative flex h-full w-full select-none items-center justify-center rounded-lg bg-secondary text-sm font-light text-secondary">
           <img src={src} alt={alt} className="w-12 h-12" />
         </div>

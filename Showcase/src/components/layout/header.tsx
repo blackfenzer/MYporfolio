@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import ThemeSwitcher from "../../utils/ThemeSwitcher";
@@ -47,10 +47,11 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.1, type: "spring" }}
             className="text-2xl font-bold text-primary"
+            onClick={() => scrollToSection("#home")}
           >
-            Name
+            Showcase
           </motion.div>
 
           {/* Switch */}
@@ -61,10 +62,13 @@ const Header = () => {
             {navItems.map((item) => (
               <motion.a
                 key={item}
-                whileHover={{ y: -2 }}
-                className="text-primary hover:text-primary/50"
+                whileHover={{ y: 4 }}
+                className="text-primary hover:text-secondary"
                 // href={`#${item.toLowerCase()}`}
                 onClick={() => scrollToSection(`#${item.toLowerCase()}`, 70)}
+                initial={{ scale: 1 }}
+                animate={{ scale: 1.2 }}
+                transition={{ duration: 0.2, type: "spring", bounce: 0.3 }}
               >
                 {item}
               </motion.a>
@@ -73,7 +77,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-primary hover:text-primary/50"
+            className="md:hidden p-2 text-primary hover:text-secondary"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

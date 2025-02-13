@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "motion/react";
 import { useTheme } from "../../context/ThemeContext";
@@ -15,7 +15,7 @@ const Footer = () => {
       id="contact"
     >
       {/* Base black background */}
-      <div className="absolute inset-0 bg-black" />
+      <div className="absolute inset-0 bg-bgSecondary" />
 
       {/* Animated blue overlay */}
       <motion.div

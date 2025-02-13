@@ -6,7 +6,7 @@ import Stack from "./components/sections/Stack";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white dark:bg-gray-900 font-varuna">
       {" "}
       <Header />
       <main>
