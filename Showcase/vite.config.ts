@@ -7,6 +7,7 @@ const ReactCompilerConfig = {
 export default defineConfig({
   plugins: [react(ReactCompilerConfig)],
   build: {
-    outDir: "../dist", // Adjust output directory if needed
+    outDir: "dist", // Adjust output directory if needed
   },
+  base: "/MYportfolio/",
 });
